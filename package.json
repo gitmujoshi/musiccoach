@@ -16,11 +16,14 @@
   },
   "dependencies": {
     "@capacitor/android": "^8.5.2",
+    "@capacitor/app": "^8.1.2",
     "@capacitor/cli": "^8.5.2",
     "@capacitor/core": "^8.5.2",
     "@capacitor/ios": "^8.5.2",
     "@capacitor/splash-screen": "^8.0.2",
+    "@revenuecat/purchases-capacitor": "^13.7.0",
     "lucide-react": "^0.294.0",
+    "mixpanel-browser": "^2.83.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.0"

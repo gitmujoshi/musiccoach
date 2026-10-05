@@ -1,0 +1,24 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <rect width="1024" height="1024" rx="200" fill="url(#gradient)"/>
+  
+  <!-- Music note -->
+  <path d="M650 300 L650 650 C650 700 620 730 570 730 C520 730 490 700 490 650 C490 600 520 570 570 570 C595 570 615 580 630 595 L630 400 L750 370 L750 480 C750 530 720 560 670 560 C620 560 590 530 590 480 C590 430 620 400 670 400 C695 400 715 410 730 425 L730 330 Z" 
+        fill="white" 
+        opacity="0.95"/>
+  
+  <!-- Waveform accent -->
+  <path d="M250 512 Q300 450, 350 512 T450 512 Q500 574, 550 512" 
+        stroke="white" 
+        stroke-width="8" 
+        stroke-linecap="round" 
+        fill="none" 
+        opacity="0.6"/>
+  
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7B5CD6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C58A12;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>
