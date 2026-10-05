@@ -1,0 +1,17 @@
+.tips {
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 14px;
+  display: grid;
+  gap: 6px;
+  max-width: 70ch;
+}
+
+.tips li::before {
+  content: "• ";
+  color: var(--oct);
+  font-weight: bold;
+  margin-right: 8px;
+}

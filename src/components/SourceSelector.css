@@ -1,0 +1,28 @@
+.source {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.source label.k {
+  font-weight: 500;
+}
+
+.sr {
+  position: absolute;
+  left: -9999px;
+}
+
+#srcInfo {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 14px;
+  min-height: 21px;
+}
+
+#file:focus-visible + label {
+  outline: 3px solid var(--oct);
+  outline-offset: 2px;
+}

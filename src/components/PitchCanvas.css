@@ -1,0 +1,18 @@
+.rollwrap {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--roll);
+}
+
+#roll {
+  display: block;
+  width: 100%;
+  height: clamp(250px, 44vh, 420px);
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+#roll:active {
+  cursor: grabbing;
+}

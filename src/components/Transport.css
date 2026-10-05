@@ -1,0 +1,29 @@
+.transport {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+  margin: 14px 0 4px;
+}
+
+.transport input[type=range] {
+  flex: 1 1 180px;
+  min-width: 140px;
+  accent-color: var(--ink);
+  height: 44px;
+}
+
+#time {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  font-size: 14px;
+  min-width: 84px;
+  text-align: right;
+}
+
+#msg {
+  min-height: 24px;
+  margin: 2px 0 6px;
+  font-size: 14px;
+  color: var(--muted);
+}

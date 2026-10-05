@@ -1,0 +1,55 @@
+:root {
+  box-sizing: border-box;
+  --bg: #F1ECEF;
+  --panel: #FFFFFF;
+  --panel2: #E9E1E7;
+  --ink: #2B1730;
+  --muted: #6F5C76;
+  --line: #D5C8D3;
+  --ref: #C58A12;
+  --good: #0B8F74;
+  --bad: #D6453A;
+  --oct: #7B5CD6;
+  --roll: #FAF6F9;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1B1017;
+    --panel: #27161F;
+    --panel2: #35202C;
+    --ink: #F4EAF0;
+    --muted: #B29FAB;
+    --line: #46303D;
+    --ref: #E7B544;
+    --good: #4ED8B6;
+    --bad: #FF7C6E;
+    --oct: #B9A2FF;
+    --roll: #130A10;
+    color-scheme: dark;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html, body {
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}

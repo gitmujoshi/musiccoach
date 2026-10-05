@@ -1,0 +1,172 @@
+details.diag {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-top: 18px;
+  padding: 0;
+}
+
+details.diag > summary {
+  cursor: pointer;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+  font-weight: 600;
+  list-style: none;
+}
+
+details.diag > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.diag > summary::after {
+  content: "+";
+  margin-left: auto;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--muted);
+}
+
+details.diag[open] > summary::after {
+  content: "–";
+}
+
+.diagbody {
+  padding: 4px 0 18px;
+  display: grid;
+  gap: 14px;
+}
+
+#dgStatus {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+#dgStatus[data-st="good"] {
+  color: var(--good);
+}
+
+#dgStatus[data-st="warn"] {
+  color: var(--oct);
+}
+
+#dgStatus[data-st="bad"] {
+  color: var(--bad);
+}
+
+.lvl {
+  position: relative;
+  height: 18px;
+  border-radius: 9px;
+  background: var(--panel2);
+  overflow: hidden;
+}
+
+#dgFill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: var(--good);
+  opacity: 0.85;
+  transition: width 0.1s linear;
+}
+
+#dgPeak {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  margin-left: -1px;
+  background: var(--ink);
+}
+
+#dgGate {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--bad);
+  left: 20%;
+}
+
+.lvlnote {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+#dgNums {
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.ctl {
+  display: grid;
+  grid-template-columns: minmax(120px, 170px) 1fr 54px;
+  gap: 8px 12px;
+  align-items: center;
+  font-size: 15px;
+}
+
+.ctl input[type=range] {
+  width: 100%;
+  accent-color: var(--ink);
+  height: 36px;
+}
+
+.ctl output {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  text-align: right;
+  font-size: 14px;
+}
+
+dl#dgInfo {
+  display: grid;
+  grid-template-columns: minmax(110px, 170px) 1fr;
+  gap: 4px 12px;
+  margin: 0;
+  font-size: 14px;
+}
+
+dl#dgInfo dt {
+  color: var(--muted);
+}
+
+dl#dgInfo dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+#dgLog {
+  margin: 0;
+  font: 12px/1.5 ui-monospace, Menlo, monospace;
+  white-space: pre-wrap;
+  background: var(--panel2);
+  padding: 10px 12px;
+  border-radius: 8px;
+  max-height: 170px;
+  overflow: auto;
+  min-height: 40px;
+  overflow-wrap: anywhere;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.switch {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-height: 44px;
+  cursor: pointer;
+}
