@@ -203,10 +203,37 @@ body {
     50% { transform: translateY(-20px); }
 }
 
+/* Live Demo Section */
+.live-demo {
+    padding: 80px 0;
+    background: var(--bg-white);
+}
+
+.demo-embed {
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.demo-embed iframe {
+    width: 100%;
+    height: 700px;
+    border: none;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .demo-embed iframe {
+        height: 600px;
+    }
+}
+
 /* Features Section */
 .features {
     padding: 80px 0;
-    background: var(--bg-white);
+    background: var(--bg-light);
 }
 
 .section-title {

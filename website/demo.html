@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicCoach Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .demo-container {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .pitch-display {
+            background: #f7fafc;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .note-name {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .frequency {
+            font-size: 1.5rem;
+            color: #4a5568;
+            margin-bottom: 1rem;
+        }
+
+        .status {
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .status.listening {
+            background: #10b981;
+            color: white;
+        }
+
+        .status.stopped {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+
+        .visualizer {
+            width: 100%;
+            height: 100px;
+            background: #f7fafc;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        button {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+
+        .btn-secondary:hover {
+            background: #cbd5e0;
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .cta h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .cta p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .app-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .app-btn {
+            background: white;
+            color: #667eea;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .app-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .instructions {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            color: #856404;
+        }
+
+        @media (max-width: 600px) {
+            .demo-container {
+                padding: 1.5rem;
+            }
+
+            .note-name {
+                font-size: 3rem;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>🎵 MusicCoach Live Demo</h1>
+        <p class="subtitle">Try real-time pitch detection in your browser</p>
+
+        <div class="instructions">
+            <strong>📝 Instructions:</strong> Click "Start Listening", allow microphone access, then play or sing any note!
+        </div>
+
+        <div class="pitch-display">
+            <div class="note-name" id="noteName">--</div>
+            <div class="frequency" id="frequency">-- Hz</div>
+            <div class="status stopped" id="status">Click Start to Begin</div>
+        </div>
+
+        <div class="visualizer">
+            <canvas id="visualizer"></canvas>
+        </div>
+
+        <div class="controls">
+            <button class="btn-primary" id="startBtn">🎤 Start Listening</button>
+            <button class="btn-secondary" id="stopBtn" disabled>⏹ Stop</button>
+        </div>
+
+        <div class="cta">
+            <h3>Like what you see?</h3>
+            <p>Get the full app with practice tools, progress tracking, and more!</p>
+            <div class="app-buttons">
+                <a href="#" class="app-btn">📱 App Store</a>
+                <a href="#" class="app-btn">🤖 Google Play</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple YIN pitch detection algorithm
+        function autoCorrelate(buffer, sampleRate) {
+            const SIZE = buffer.length;
+            const MAX_SAMPLES = Math.floor(SIZE / 2);
+            let best_offset = -1;
+            let best_correlation = 0;
+            let rms = 0;
+            
+            for (let i = 0; i < SIZE; i++) {
+                const val = buffer[i];
+                rms += val * val;
+            }
+            rms = Math.sqrt(rms / SIZE);
+            
+            if (rms < 0.01) return -1;
+            
+            let lastCorrelation = 1;
+            for (let offset = 1; offset < MAX_SAMPLES; offset++) {
+                let correlation = 0;
+                for (let i = 0; i < MAX_SAMPLES; i++) {
+                    correlation += Math.abs(buffer[i] - buffer[i + offset]);
+                }
+                correlation = 1 - (correlation / MAX_SAMPLES);
+                
+                if (correlation > 0.9 && correlation > lastCorrelation) {
+                    const foundGoodCorrelation = correlation > best_correlation;
+                    if (foundGoodCorrelation) {
+                        best_correlation = correlation;
+                        best_offset = offset;
+                    }
+                }
+                lastCorrelation = correlation;
+            }
+            
+            if (best_correlation > 0.01) {
+                return sampleRate / best_offset;
+            }
+            return -1;
+        }
+
+        function noteFromPitch(frequency) {
+            const noteNum = 12 * (Math.log(frequency / 440) / Math.log(2));
+            return Math.round(noteNum) + 69;
+        }
+
+        function frequencyFromNoteNumber(note) {
+            return 440 * Math.pow(2, (note - 69) / 12);
+        }
+
+        function centsOffFromPitch(frequency, note) {
+            return Math.floor(1200 * Math.log(frequency / frequencyFromNoteNumber(note)) / Math.log(2));
+        }
+
+        const noteStrings = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+
+        function getNoteName(frequency) {
+            const note = noteFromPitch(frequency);
+            const noteName = noteStrings[note % 12];
+            const octave = Math.floor(note / 12) - 1;
+            const cents = centsOffFromPitch(frequency, note);
+            
+            return {
+                name: noteName + octave,
+                cents: cents,
+                frequency: frequency
+            };
+        }
+
+        // UI Elements
+        const noteNameEl = document.getElementById('noteName');
+        const frequencyEl = document.getElementById('frequency');
+        const statusEl = document.getElementById('status');
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const canvas = document.getElementById('visualizer');
+        const canvasCtx = canvas.getContext('2d');
+
+        let audioContext;
+        let analyser;
+        let microphone;
+        let javascriptNode;
+        let isListening = false;
+
+        // Setup canvas
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+
+        function drawVisualizer(dataArray) {
+            canvasCtx.fillStyle = '#f7fafc';
+            canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            canvasCtx.lineWidth = 2;
+            canvasCtx.strokeStyle = '#667eea';
+            canvasCtx.beginPath();
+            
+            const sliceWidth = canvas.width / dataArray.length;
+            let x = 0;
+            
+            for (let i = 0; i < dataArray.length; i++) {
+                const v = dataArray[i] / 128.0;
+                const y = v * canvas.height / 2;
+                
+                if (i === 0) {
+                    canvasCtx.moveTo(x, y);
+                } else {
+                    canvasCtx.lineTo(x, y);
+                }
+                
+                x += sliceWidth;
+            }
+            
+            canvasCtx.lineTo(canvas.width, canvas.height / 2);
+            canvasCtx.stroke();
+        }
+
+        function updatePitch() {
+            if (!isListening) return;
+            
+            const bufferLength = analyser.fftSize;
+            const buffer = new Float32Array(bufferLength);
+            analyser.getFloatTimeDomainData(buffer);
+            
+            // Visualizer
+            const dataArray = new Uint8Array(analyser.frequencyBinCount);
+            analyser.getByteTimeDomainData(dataArray);
+            drawVisualizer(dataArray);
+            
+            const pitch = autoCorrelate(buffer, audioContext.sampleRate);
+            
+            if (pitch > -1) {
+                const note = getNoteName(pitch);
+                noteNameEl.textContent = note.name;
+                frequencyEl.textContent = Math.round(note.frequency) + ' Hz';
+                
+                if (Math.abs(note.cents) < 10) {
+                    statusEl.textContent = '✓ In Tune!';
+                    statusEl.style.background = '#10b981';
+                } else if (note.cents > 0) {
+                    statusEl.textContent = '↑ Sharp (' + note.cents + '¢)';
+                    statusEl.style.background = '#fbbf24';
+                } else {
+                    statusEl.textContent = '↓ Flat (' + Math.abs(note.cents) + '¢)';
+                    statusEl.style.background = '#fbbf24';
+                }
+            } else {
+                noteNameEl.textContent = '--';
+                frequencyEl.textContent = '-- Hz';
+                statusEl.textContent = '🎤 Listening...';
+                statusEl.style.background = '#667eea';
+            }
+            
+            requestAnimationFrame(updatePitch);
+        }
+
+        startBtn.addEventListener('click', async () => {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                analyser = audioContext.createAnalyser();
+                analyser.fftSize = 2048;
+                
+                microphone = audioContext.createMediaStreamSource(stream);
+                microphone.connect(analyser);
+                
+                isListening = true;
+                startBtn.disabled = true;
+                stopBtn.disabled = false;
+                
+                statusEl.textContent = '🎤 Listening...';
+                statusEl.className = 'status listening';
+                
+                updatePitch();
+            } catch (err) {
+                alert('Microphone access denied. Please allow microphone access and try again.');
+                console.error('Error accessing microphone:', err);
+            }
+        });
+
+        stopBtn.addEventListener('click', () => {
+            isListening = false;
+            
+            if (microphone) {
+                microphone.disconnect();
+                microphone = null;
+            }
+            
+            if (audioContext) {
+                audioContext.close();
+                audioContext = null;
+            }
+            
+            noteNameEl.textContent = '--';
+            frequencyEl.textContent = '-- Hz';
+            statusEl.textContent = 'Stopped';
+            statusEl.className = 'status stopped';
+            
+            startBtn.disabled = false;
+            stopBtn.disabled = true;
+            
+            // Clear visualizer
+            canvasCtx.fillStyle = '#f7fafc';
+            canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+        });
+    </script>
+</body>
+</html>
