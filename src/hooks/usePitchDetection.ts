@@ -9,7 +9,7 @@ export function usePitchDetection(
   const [liveNote, setLiveNote] = useState<any>(null)
   const [targetNote, setTargetNote] = useState<string | null>(null)
   const [accuracy, setAccuracy] = useState<number | null>(null)
-  const [score, setScore] = useState({ good: 0, total: 0 })
+  const [score] = useState({ good: 0, total: 0 })
   
   const animationFrameRef = useRef<number>()
 

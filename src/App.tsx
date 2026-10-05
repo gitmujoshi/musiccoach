@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Header from './components/Header'
 import SourceSelector from './components/SourceSelector'
 import PitchCanvas from './components/PitchCanvas'
@@ -37,7 +37,6 @@ function App() {
     micEnabled,
     micError,
     startMicrophone,
-    stopMicrophone,
     micStats,
     sensitivity,
     boost,
@@ -49,7 +48,6 @@ function App() {
     liveNote,
     targetNote,
     accuracy,
-    score,
   } = usePitchDetection(reference, position, playing, micEnabled)
 
   return (
@@ -85,7 +83,6 @@ function App() {
           targetNote={targetNote}
           liveNote={liveNote}
           accuracy={accuracy}
-          score={score}
           micEnabled={micEnabled}
           micError={micError}
           playing={playing}

@@ -3,7 +3,7 @@ import { useState, useRef, useCallback } from 'react'
 export function useMicrophone() {
   const [micEnabled, setMicEnabled] = useState(false)
   const [micError, setMicError] = useState<string | null>(null)
-  const [micStats, setMicStats] = useState<any>({
+  const [micStats] = useState<any>({
     level: 0,
     peak: 0,
     levelDb: '–',

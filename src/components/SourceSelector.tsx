@@ -34,7 +34,6 @@ export default function SourceSelector({ onReferenceLoaded, onMessage }: Props) 
         }
       }
       
-      const fileName = file.name.replace(/\.[^.]+$/, '')
       onMessage('Processing audio...')
       
     } catch (err) {

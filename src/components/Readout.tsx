@@ -4,7 +4,6 @@ interface Props {
   targetNote: string | null
   liveNote: any
   accuracy: number | null
-  score: any
   micEnabled: boolean
   micError: string | null
   playing: boolean
@@ -13,8 +12,7 @@ interface Props {
 export default function Readout({ 
   targetNote, 
   liveNote, 
-  accuracy, 
-  score,
+  accuracy,
   micEnabled,
   micError,
   playing 

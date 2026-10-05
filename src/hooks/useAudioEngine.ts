@@ -4,7 +4,7 @@ export function useAudioEngine(reference: any) {
   const [playing, setPlaying] = useState(false)
   const [position, setPosition] = useState(0)
   const [playbackRate, setPlaybackRate] = useState(1)
-  const [loopState, setLoopState] = useState({ a: null, b: null, on: false })
+  const [loopState, setLoopState] = useState<{ a: number | null; b: number | null; on: boolean }>({ a: null, b: null, on: false })
   const [hearRecording, setHearRecording] = useState(true)
   
   const audioContextRef = useRef<AudioContext | null>(null)
