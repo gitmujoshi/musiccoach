@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - MusicCoach</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .help-content {
+            max-width: 900px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+        }
+        .help-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .faq-section {
+            margin-bottom: 3rem;
+        }
+        .faq-category {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        .faq-item {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .faq-question {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        .contact-box {
+            background: var(--gradient);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="../app-icon.svg" alt="MusicCoach" class="logo">
+                <span>MusicCoach</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#download" class="btn-primary">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="help-content">
+        <h1>Help Center</h1>
+
+        <div class="faq-section">
+            <h2 class="faq-category">Getting Started</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How does MusicCoach work?</div>
+                <div class="faq-answer">
+                    MusicCoach uses your device's microphone to listen to the notes you play in real-time. Our advanced pitch detection algorithm (based on the YIN algorithm) analyzes the frequency of your sound and compares it to the target notes in the piece you're practicing. You'll see instant visual feedback showing whether you're sharp, flat, or in tune.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What instruments work with MusicCoach?</div>
+                <div class="faq-answer">
+                    MusicCoach works with any pitched instrument including violin, viola, cello, voice, flute, clarinet, saxophone, trumpet, and more. Any instrument that produces sustained pitched notes will work great! Percussion and rhythm instruments are not currently supported.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do I need an internet connection?</div>
+                <div class="faq-answer">
+                    No! Once you've downloaded songs or uploaded your audio files, you can practice completely offline. The pitch detection runs entirely on your device. Internet is only needed for downloading songs, syncing progress, or accessing premium features.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2 class="faq-category">Using the App</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I upload my own music?</div>
+                <div class="faq-answer">
+                    In Premium: Tap the "+" button → "Upload File" → select an audio file (MP3, WAV, M4A) from your device. MusicCoach will analyze the audio and create a pitch reference for you to practice with. Make sure you have the rights to use any uploaded music.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What do the colors mean on the pitch display?</div>
+                <div class="faq-answer">
+                    <strong>Green:</strong> You're in tune! Keep playing.<br>
+                    <strong>Blue line:</strong> The target pitch you should be playing.<br>
+                    <strong>Red dot:</strong> Your current pitch (when you're out of tune).<br>
+                    The closer your dot is to the line, the better your intonation!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I slow down the tempo?</div>
+                <div class="faq-answer">
+                    Yes! Use the tempo slider at the bottom of the practice screen. You can slow down to 50% speed or speed up to 150%. The pitch detection will still work accurately at any tempo.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I loop a difficult section?</div>
+                <div class="faq-answer">
+                    Tap the loop button, then drag the handles on the waveform to select the section you want to repeat. Hit play and MusicCoach will continuously loop that section until you turn off the loop.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2 class="faq-category">Subscriptions & Billing</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">What's included in the free version?</div>
+                <div class="faq-answer">
+                    Free users get: 10 minutes of practice per day, 3 demo songs, basic pitch detection, and tempo control. Ads are displayed in the free version.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What's included in Premium?</div>
+                <div class="faq-answer">
+                    Premium includes: Unlimited practice time, upload unlimited audio files, advanced loop controls, detailed progress tracking, support for multiple instruments, no ads, and priority support.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I cancel my subscription?</div>
+                <div class="faq-answer">
+                    <strong>iOS:</strong> Settings → [Your Name] → Subscriptions → MusicCoach → Cancel Subscription<br>
+                    <strong>Android:</strong> Play Store → Menu → Subscriptions → MusicCoach → Cancel Subscription<br>
+                    You'll keep Premium access until the end of your current billing period.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I get a refund?</div>
+                <div class="faq-answer">
+                    Refund policies are managed by Apple and Google. Contact App Store or Play Store support directly. Generally, refunds are available within 48 hours of purchase if you haven't used the app extensively.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2 class="faq-category">Troubleshooting</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">The pitch detection isn't working correctly</div>
+                <div class="faq-answer">
+                    Try these solutions:<br>
+                    1. <strong>Check microphone permissions:</strong> Settings → MusicCoach → Allow Microphone<br>
+                    2. <strong>Reduce background noise:</strong> Practice in a quiet room<br>
+                    3. <strong>Play closer to your device:</strong> Keep your phone 1-3 feet away<br>
+                    4. <strong>Play louder:</strong> Soft playing may be hard to detect<br>
+                    5. <strong>Check mic sensitivity:</strong> Try the sensitivity slider in Settings<br>
+                    6. <strong>Restart the app:</strong> Close completely and reopen
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">The app crashes or freezes</div>
+                <div class="faq-answer">
+                    1. Update to the latest version from App Store/Play Store<br>
+                    2. Restart your device<br>
+                    3. Clear app cache (Settings → Apps → MusicCoach → Clear Cache on Android)<br>
+                    4. Ensure you have at least 500MB free storage<br>
+                    5. If issues persist, contact support with your device model and iOS/Android version
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Audio playback is delayed or out of sync</div>
+                <div class="faq-answer">
+                    1. Close other apps using audio<br>
+                    2. Disable Bluetooth audio devices (use device speakers or wired headphones)<br>
+                    3. Reduce buffer size in Settings → Audio → Buffer Size → Small<br>
+                    4. On Android, enable "Performance Mode" in Settings
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">My progress isn't syncing</div>
+                <div class="faq-answer">
+                    Ensure you're signed in with the same account on all devices. Check your internet connection. Sync happens automatically when online, but you can force sync in Settings → Account → Sync Now.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2 class="faq-category">Privacy & Security</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is my audio recorded?</div>
+                <div class="faq-answer">
+                    <strong>No!</strong> MusicCoach never records, stores, or transmits your audio. All pitch detection happens locally on your device in real-time. Your practice sessions are completely private. See our <a href="privacy.html">Privacy Policy</a> for full details.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What data do you collect?</div>
+                <div class="faq-answer">
+                    We collect: email address (for account), practice session statistics (for progress tracking), and basic usage analytics (to improve the app). We never collect audio, personal information beyond email, or any identifying data from your practice sessions.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I delete my account?</div>
+                <div class="faq-answer">
+                    Go to Settings → Account → Delete Account. This will permanently delete all your data including practice statistics and uploaded files. This cannot be undone.
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-box">
+            <h2>Still Need Help?</h2>
+            <p style="margin-bottom: 1.5rem;">Our support team is here to help you!</p>
+            <a href="mailto:support@musiccoach.app" class="btn-large" style="background: white; color: var(--primary-color);">
+                Contact Support
+            </a>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.9;">
+                We typically respond within 24 hours
+            </p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="../app-icon.svg" alt="MusicCoach" class="logo">
+                        <span>MusicCoach</span>
+                    </div>
+                    <p>Practice music smarter with real-time pitch feedback.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="help.html">Help Center</a>
+                    <a href="mailto:support@musiccoach.app">Contact Support</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MusicCoach. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

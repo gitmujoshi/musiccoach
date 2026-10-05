@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1242 2688">
+    <defs>
+        <linearGradient id="phoneGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Phone background -->
+    <rect width="1242" height="2688" fill="url(#phoneGrad)"/>
+    
+    <!-- Status bar -->
+    <rect x="0" y="0" width="1242" height="100" fill="#000" opacity="0.2"/>
+    <text x="100" y="70" fill="#fff" font-family="Arial" font-size="40">9:41</text>
+    
+    <!-- App content area -->
+    <rect x="50" y="150" width="1142" height="2400" rx="30" fill="#fff"/>
+    
+    <!-- Header -->
+    <text x="621" y="300" text-anchor="middle" font-family="Arial" font-size="50" font-weight="bold" fill="#667eea">MusicCoach</text>
+    
+    <!-- Pitch visualization -->
+    <rect x="100" y="400" width="1042" height="600" rx="15" fill="#f7fafc" stroke="#667eea" stroke-width="3"/>
+    <line x1="150" y1="700" x2="1092" y2="700" stroke="#667eea" stroke-width="4"/>
+    <circle cx="400" cy="680" r="20" fill="#10b981"/>
+    <circle cx="600" cy="720" r="20" fill="#10b981"/>
+    <circle cx="800" cy="690" r="20" fill="#10b981"/>
+    
+    <!-- Note name -->
+    <text x="621" y="1100" text-anchor="middle" font-family="Arial" font-size="100" font-weight="bold" fill="#667eea">A4</text>
+    <text x="621" y="1180" text-anchor="middle" font-family="Arial" font-size="40" fill="#4a5568">440 Hz</text>
+    
+    <!-- Accuracy -->
+    <rect x="200" y="1280" width="842" height="100" rx="50" fill="#10b981"/>
+    <text x="621" y="1355" text-anchor="middle" font-family="Arial" font-size="50" font-weight="bold" fill="#fff">96% Accurate</text>
+    
+    <!-- Controls -->
+    <circle cx="300" cy="1550" r="60" fill="#667eea"/>
+    <polygon points="300,1520 300,1580 340,1550" fill="#fff"/>
+    
+    <circle cx="621" cy="1550" r="80" fill="#ef4444"/>
+    <rect x="601" y="1530" width="40" height="40" rx="5" fill="#fff"/>
+    
+    <circle cx="942" cy="1550" r="60" fill="#667eea"/>
+    <circle cx="922" cy="1540" r="8" fill="#fff"/>
+    <circle cx="942" cy="1540" r="8" fill="#fff"/>
+    <circle cx="962" cy="1540" r="8" fill="#fff"/>
+    
+    <!-- Waveform -->
+    <rect x="100" y="1700" width="1042" height="200" rx="15" fill="#f7fafc"/>
+    <path d="M150,1800 Q250,1750 350,1800 T550,1800 T750,1800 T950,1800 T1092,1800" 
+          stroke="#667eea" stroke-width="3" fill="none"/>
+    
+    <!-- Progress -->
+    <rect x="100" y="2000" width="1042" height="8" rx="4" fill="#e2e8f0"/>
+    <rect x="100" y="2000" width="600" height="8" rx="4" fill="#667eea"/>
+    
+    <!-- Time -->
+    <text x="100" y="2080" font-family="Arial" font-size="35" fill="#4a5568">1:23</text>
+    <text x="1042" y="2080" text-anchor="end" font-family="Arial" font-size="35" fill="#4a5568">3:45</text>
+    
+    <!-- Bottom controls -->
+    <rect x="100" y="2200" width="1042" height="150" rx="20" fill="#f7fafc"/>
+    <text x="621" y="2290" text-anchor="middle" font-family="Arial" font-size="45" fill="#667eea">Twinkle Twinkle Little Star</text>
+    
+    <!-- Tempo control -->
+    <text x="200" y="2450" font-family="Arial" font-size="35" fill="#4a5568">Tempo: 100%</text>
+    <rect x="500" y="2420" width="542" height="40" rx="20" fill="#e2e8f0"/>
+    <rect x="500" y="2420" width="342" height="40" rx="20" fill="#667eea"/>
+    <circle cx="842" cy="2440" r="30" fill="#fff" stroke="#667eea" stroke-width="3"/>
+</svg>

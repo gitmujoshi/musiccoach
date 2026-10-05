@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+    <defs>
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="1200" height="630" fill="url(#bgGrad)"/>
+    
+    <!-- Phone mockup -->
+    <rect x="750" y="100" width="350" height="430" rx="30" fill="#fff" opacity="0.95"/>
+    <rect x="770" y="130" width="310" height="370" rx="15" fill="#f7fafc"/>
+    
+    <!-- Pitch display on phone -->
+    <line x1="800" y1="250" x2="1050" y2="250" stroke="#667eea" stroke-width="3"/>
+    <circle cx="850" cy="240" r="12" fill="#10b981"/>
+    <circle cx="950" cy="260" r="12" fill="#10b981"/>
+    <text x="925" y="350" text-anchor="middle" font-family="Arial" font-size="50" font-weight="bold" fill="#667eea">A4</text>
+    <text x="925" y="390" text-anchor="middle" font-family="Arial" font-size="18" fill="#4a5568">96% Accurate</text>
+    
+    <!-- Main text -->
+    <text x="80" y="200" font-family="Arial" font-size="80" font-weight="bold" fill="#fff">MusicCoach</text>
+    <text x="80" y="280" font-family="Arial" font-size="45" fill="#fff" opacity="0.95">Practice Music Smarter</text>
+    <text x="80" y="340" font-family="Arial" font-size="38" fill="#fff" opacity="0.9">Real-Time Pitch Feedback</text>
+    
+    <!-- Features -->
+    <circle cx="100" cy="420" r="8" fill="#10b981"/>
+    <text x="130" y="430" font-family="Arial" font-size="28" fill="#fff">Instant pitch detection</text>
+    
+    <circle cx="100" cy="470" r="8" fill="#10b981"/>
+    <text x="130" y="480" font-family="Arial" font-size="28" fill="#fff">Track your progress</text>
+    
+    <circle cx="100" cy="520" r="8" fill="#10b981"/>
+    <text x="130" y="530" font-family="Arial" font-size="28" fill="#fff">Perfect your intonation</text>
+</svg>
